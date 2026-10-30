@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling==1.30.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "expense-report-mcp"
+version = "0.1.0"
+description = "A local MCP expense-report server with a framework-free core."
+readme = "README.md"
+requires-python = ">=3.15,<3.16"
+dependencies = ["mcp==2.3.0", "pydantic==2.14.1"]
+
+[project.scripts]
+expense-server = "expense_report.bootstrap:main"
+expense-demo = "expense_report.clients:main"
+
+[dependency-groups]
+dev = ["ruff==0.17.3", "pytest==9.2.0", "pre-commit==4.7.0", "mypy==2.4.1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expense_report"]
+
+[tool.ruff]
+line-length = 79
+target-version = "py315"
+extend-exclude = [".python", ".tools", ".uv-cache", ".venv", ".pre-commit-cache"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "D", "B", "UP", "SIM", "Q", "ISC001", "C90", "PLR0911", "PLR0912", "PLR0913", "PLR0915"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-branches = 12
+max-returns = 6
+max-statements = 50
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    "error::ResourceWarning",
+    "error::DeprecationWarning:expense_report.*",
+]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+
+[tool.mypy]
+python_version = "3.15"
+files = ["src", "scripts"]
+strict = true
+warn_unreachable = true
+show_error_codes = true
+pretty = true

@@ -1,0 +1,12 @@
+minimum_pre_commit_version: "4.7.0"
+repos:
+  - repo: local
+    hooks:
+      - id: project-quality
+        name: Code style, architecture and behavior
+        entry: python scripts/check_quality.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        require_serial: true
+        stages: [pre-commit]

@@ -1,0 +1,86 @@
+{
+  "trips": [
+    {
+      "trip_id": "trip-madrid",
+      "employee_id": "employee-01",
+      "destination": "Madrid",
+      "starts_on": "2026-10-19",
+      "ends_on": "2026-10-21"
+    },
+    {
+      "trip_id": "trip-private",
+      "employee_id": "employee-02",
+      "destination": "Bilbao",
+      "starts_on": "2026-10-19",
+      "ends_on": "2026-10-21"
+    }
+  ],
+  "receipts": [
+    {
+      "trip_id": "trip-madrid",
+      "receipt_id": "train-01",
+      "vendor": "Demo Rail",
+      "invoice_number": "TRAIN-101",
+      "spent_on": "2026-10-19",
+      "category": "transport",
+      "amount": "89.90",
+      "currency": "EUR",
+      "evidence_reference": "demo:train-01"
+    },
+    {
+      "trip_id": "trip-madrid",
+      "receipt_id": "hotel-01",
+      "vendor": "Demo Hotel",
+      "invoice_number": "HOTEL-201",
+      "spent_on": "2026-10-20",
+      "category": "hotel",
+      "amount": "160.00",
+      "currency": "EUR",
+      "evidence_reference": "demo:hotel-01"
+    },
+    {
+      "trip_id": "trip-madrid",
+      "receipt_id": "meal-01",
+      "vendor": "Demo Cafe",
+      "invoice_number": "MEAL-301",
+      "spent_on": "2026-10-20",
+      "category": "meal",
+      "amount": "22.00",
+      "currency": "EUR",
+      "evidence_reference": "demo:meal-01"
+    },
+    {
+      "trip_id": "trip-madrid",
+      "receipt_id": "meal-02",
+      "vendor": "Demo Bistro",
+      "invoice_number": "MEAL-302",
+      "spent_on": "2026-10-20",
+      "category": "meal",
+      "amount": "48.00",
+      "currency": "EUR",
+      "evidence_reference": "demo:meal-02"
+    },
+    {
+      "trip_id": "trip-madrid",
+      "receipt_id": "meal-copy",
+      "vendor": "Demo Cafe",
+      "invoice_number": "MEAL-301",
+      "spent_on": "2026-10-20",
+      "category": "meal",
+      "amount": "22.00",
+      "currency": "EUR",
+      "evidence_reference": "demo:meal-copy"
+    },
+    {
+      "trip_id": "trip-madrid",
+      "receipt_id": "taxi-01",
+      "vendor": "Demo Taxi",
+      "invoice_number": null,
+      "spent_on": "2026-10-21",
+      "category": "transport",
+      "amount": "12.00",
+      "currency": "EUR",
+      "evidence_reference": null
+    }
+  ]
+}
